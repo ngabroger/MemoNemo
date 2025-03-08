@@ -1,16 +1,24 @@
-# flutter_intern_challenge
 
-A new Flutter project.
+# MEMO NEMO
 
-## Getting Started
+Project ini adalah mini project saya untuk membuat Notes yang dimana berguna untuk saya yang dimana saya mudah lupa untuk mengingat sesuatu . Teknologi yang pakai saya menggunakan firebase dan juga Authnya  
 
-This project is a starting point for a Flutter application.
+## LINK DEMO PROJECT
 
-A few resources to get you started if this is your first Flutter project:
+[link demo](https://drive.google.com/drive/folders/1nsllT7zV1Am26cc5T97t-1aaP-krQGAW?usp=sharing)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Authors
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[@ngabroger](https://www.github.com/ngabroger)
+
+
+## Tech Stack
+
+**TECH:** Flutter
+
+**Server:** Firestore, Authentication
+
+**Package:** GoogleFonts , image_picker , cloud_firestore, provider, firebase_core_platform_interface
+
+
+
