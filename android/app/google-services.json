@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "635969494358",
+    "project_id": "intern-challenge-ngabroger",
+    "storage_bucket": "intern-challenge-ngabroger.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:635969494358:android:38a09d6406d679eccc4af7",
+        "android_client_info": {
+          "package_name": "com.example.flutter_intern_challenge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAK-19QWF721CuJnxIsF_WmVTlKKNNS1-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
