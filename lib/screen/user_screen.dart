@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_intern_challenge/controller/firebase_auth_provider.dart';
+import 'package:flutter_intern_challenge/controller/firebase_notes_provider.dart';
 import 'package:flutter_intern_challenge/static/firebase_auth_status.dart';
 import 'package:flutter_intern_challenge/static/navigation_route.dart';
 import 'package:flutter_intern_challenge/styles/theme/material_theme.dart';
@@ -242,12 +243,15 @@ class _UserScreenState extends State<UserScreen> {
 
   void _tapToLogout() async {
     final firebaseAuthProvider = context.read<FirebaseAuthProvider>();
+    final FirebaseNotesProvider firebaseNotesProvider =
+        context.read<FirebaseNotesProvider>();
     final navigator = Navigator.of(context);
     final scaffoldMessenger = ScaffoldMessenger.of(context);
 
     await firebaseAuthProvider.signOutUser();
     switch (firebaseAuthProvider.authStatus) {
       case FirebaseAuthStatus.unauthenticated:
+        firebaseNotesProvider.clearNotes();
         navigator.pushReplacementNamed(NavigationRoutes.login.route);
         break;
       default:

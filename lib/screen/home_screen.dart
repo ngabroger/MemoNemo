@@ -18,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     TextTheme textTheme = createTextTheme(context, "Montserrat", "Montserrat");
     final notesProvider = context.watch<FirebaseNotesProvider>();
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -52,6 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: LoadingDialog(),
             )
           : ListView.builder(
+              itemCount: notesProvider.notes.length,
               itemBuilder: (context, index) {
                 final note = notesProvider.notes[index];
                 return Dismissible(
@@ -60,16 +62,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   onDismissed: (direction) {
                     notesProvider.deleteNotes(note.id);
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text("Note Deleted"),
-                      ),
+                      SnackBar(content: Text('Note deleted')),
                     );
                   },
                   background: Container(
                     color: Colors.red,
                     alignment: Alignment.centerRight,
                     padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: Icon(Icons.delete, color: Colors.white),
+                    child: Icon(
+                      Icons.delete,
+                      color: Colors.white,
+                    ),
                   ),
                   child: GestureDetector(
                     onTap: () => _showEditNoteDialog(
@@ -84,7 +87,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 );
               },
-              itemCount: notesProvider.notes.length,
             ),
       floatingActionButton: FloatingActionButton(
         onPressed: _showCreateNoteDialog,
